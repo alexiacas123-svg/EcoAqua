@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Juego del Agua - EcoWater</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="css/juego.css" rel="stylesheet"/>
+    
+</head>
+<body>
+
+    <!-- FIX: onclick="salir()" conectado -->
+    <button class="btn-salir" onclick="salir()">✕ Salir</button>
+
+    <!-- BLOBS DE FONDO -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+    <div class="caustics"></div>
+
+    <main class="layout-wrapper">
+        
+        <!-- HEADER -->
+        <header class="header-section">
+            <div class="glow-header">
+                <h1>Juego del Agua</h1>
+            </div>
+        </header>
+
+        <!-- DASHBOARD -->
+        <div class="dashboard">
+            
+            <!-- TANQUE DE AGUA -->
+            <section class="visual-section">
+                <div class="glass-container">
+                    <!-- FIX: id="agua" (antes era "water-tank", no coincidía con el JS) -->
+                    <div class="water-level" id="agua">
+                        
+                        <!-- OLA ANIMADA -->
+                        <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 30" preserveAspectRatio="none">
+                            <path d="M0,15 C37.5,0 75,30 112.5,15 C150,0 187.5,30 225,15 C262.5,0 300,30 337.5,15 C375,0 412.5,30 450,15 C487.5,0 525,30 562.5,15 C575,11 587,13 600,15 L600,30 L0,30 Z"/>
+                        </svg>
+
+                        <!-- Burbujas -->
+                        <div class="bubble" style="width:8px;height:8px;left:25%;bottom:40px;animation-delay:0s;"></div>
+                        <div class="bubble" style="width:12px;height:12px;left:50%;bottom:80px;animation-delay:1.5s;"></div>
+                        <div class="bubble" style="width:6px;height:6px;left:75%;bottom:20px;animation-delay:3s;"></div>
+                    </div>
+                    
+                    <div class="surface-highlight"></div>
+                </div>
+            </section>
+
+            <!-- INTERFAZ DEL JUEGO -->
+            <section class="game-interface">
+                
+                <!-- FIX: id="infoRonda" para que el JS actualice ronda y puntaje -->
+                <div class="scoreboard" id="infoRonda">
+                    Ronda: <span class="val">1</span>
+                    <span class="divider">|</span>
+                    Puntaje: <span class="val">0</span>
+                </div>
+
+                <!-- Pista -->
+                <div class="clue-box">
+                    <!-- FIX: id="descripcion" para mostrar la descripción de cada palabra -->
+                    <p id="descripcion"></p>
+                </div>
+
+                <!-- Casillas de letras -->
+                <div class="word-display" id="word-display"></div>
+
+                <!-- Mensaje -->
+                <div class="alert-box">
+                    <!-- FIX: id="mensaje" para los mensajes del juego -->
+                    <span class="text" id="mensaje">Presiona una letra del teclado</span>
+                    <!-- FIX: id="carita" para el emoji de estado -->
+                    <span class="emoji" id="carita" role="img" aria-label="estado"></span>
+                </div>
+
+                <!-- Letras Usadas -->
+                <div class="used-section">
+                    <h3 class="used-title">Letras usadas</h3>
+                    <!-- FIX: id="letrasUsadas" para que el JS agregue los badges -->
+                    <div class="badges-container" id="letrasUsadas"></div>
+                </div>
+
+                <!-- Botón Siguiente -->
+                <div class="btn-wrapper">
+                    <button class="pill-button" id="next-btn">
+                        SIGUIENTE RONDA
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </button>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <script src="script/juego.js"></script>
+</body>
+</html>

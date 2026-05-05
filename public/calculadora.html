@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/calculadora.css">
+    <link rel="stylesheet" href="css/historial.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>Ecowader</title>
+</head>
+<body>
+     <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="img/logo.png" alt="Logo AguaVida">
+                </div>
+                <span>EcoAqua</span>
+            </div>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="importancia.html">Importancia</a></li>
+                     <li><a href="mayorconsumo.html">Mayor consumo</a></li>
+                    <li><a href="consejos.html">Consejos</a></li>
+                    
+                    
+                    
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+              
+               <button class="btn btn-primary" onclick="window.location.href='calculadora.html'">
+                Calcula tu ahorro
+              </button>
+              <button class="btn btn-outline" onclick="window.location.href='juego.html'">
+                    <i data-lucide="gamepad-2"></i> Jugar
+                </button>
+
+
+                <button class="btn btn-sesion" id="boton-acceso" onclick="window.location.href='login.html'">
+                      <i></i> Iniciar sesión
+                </button>
+
+            </div>
+        </header>
+    </div>
+
+     <main style="padding-top: 3rem;">
+        <div class="container">
+            
+            <!-- CONTENEDOR DE LA CALCULADORA -->
+            <div class="calculator-wrapper">
+                
+                <!-- HEADER AZUL -->
+                <div class="calc-header">
+                    <i data-lucide="zap" class="calc-bg-icon" stroke-width="1.5"></i>
+                    <div class="calc-header-content">
+                        <h1>Calculadora de Consumo Estimado de Agua</h1>
+                        <p><p>Ingresa tus hábitos de uso en el hogar y obtén una estimación de tu consumo de agua.</p></p>
+                    </div>
+                </div>
+
+                <!-- CUERPO DE LA CALCULADORA -->
+                <div class="calc-body">
+                    
+                    <!-- LADO IZQUIERDO: Controles -->
+                    <div class="controls-grid">
+                        
+                        <!-- COLUMNA 1: Higiene Personal -->
+                        <div>
+                            <div class="control-column-title">Higiene Personal</div>
+                            
+                            <!-- Control 1: Ducha Diaria -->
+                            <div class="control-item">
+                                <div class="control-header">
+                                    <div class="control-info">
+                                        <div class="control-icon"><i class="fa-solid fa-shower" size="20"></i></div>
+                                        <div class="control-text">
+                                            <h3>Ducha Diaria</h3>
+                                            <p>Duración en minutos</p>
+                                        </div>
+                                    </div>
+                                    <div class="control-value" id="val-ducha-1">15 min</div>
+                                </div>
+                                <div class="slider-container">
+                                    <input type="range" min="0" max="60" value="15" oninput="document.getElementById('val-ducha-1').innerText = this.value + ' min'">
+                                    <div class="slider-labels">
+                                        <span>0 min</span>
+                                        <span>60 min</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Control 2: llave abierta -->
+                            <div class="control-item">
+                                <div class="control-header">
+                                    <div class="control-info"> 
+                                        <div class="control-text">
+                                            <h3>¿Cierras la llave?</h3>
+                                            <p>Indica si cierras la llave mientras no la estás utilizando.</p>
+                                        </div>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                          
+
+                            <!-- Control 3: Cepillado -->
+                            <div class="control-item">
+                                <div class="control-header">
+                                    <div class="control-info">
+                                        <div class="control-icon"><i class="fa-solid fa-tooth" size="20"></i></div>
+                                        <div class="control-text">
+                                            <h3>Cepillado de Dientes</h3>
+                                            <p>Indica si cierras la llave mientras<br>no la estás utilizando.</p>
+                                        </div>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+
+                              <!-- Control 4: inodoro -->
+                            <div class="control-item">
+                                <div class="control-header">
+                                    <div class="control-info">
+                                        <div class="control-icon"><i class="fa-solid fa-toilet" size="20"></i></div>
+                                        <div class="control-text">
+                                            <h3>Sistema de Descarga</h3>
+                                            <p>Selecciona si tu inodoro cuenta con sistema dual o normal.</p>
+                                        </div>
+                                       <div class="segmented-control">
+                                        <!-- IDs y names únicos para agrupar -->
+                                        <input type="radio" id="sistemas-dual-1" name="sistemas1" checked>
+                                        <label for="sistemas-dual-1">Dual</label>
+                                        <input type="radio" id="sistemas-norm-1" name="sistemas1">
+                                        <label for="sistemas-norm-1">Normal</label>
+                                      </div>
+                                   </div>
+                                    
+                               </div>
+                               
+                            </div>
+                            
+                             <!-- Control 5: lavado de manos -->
+                            <div class="control-item">
+                                <div class="control-header">
+                                    <div class="control-info">
+                                        <div class="control-icon"><i class="fa-solid fa-sink" size="20"></i></div>
+                                        <div class="control-text">
+                                            <h3>Lavado de manos</h3>
+                                            <p>Indica si cierras la llave mientras<br>te enjabonas</p>
+                                        </div>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Control 6: Afeitado -->
+                            <div class="control-item">
+                                <div class="control-header">
+                                    <div class="control-info">
+                                        <div class="control-icon"><i class="fa-solid fa-scissors" size="20"></i></div>
+                                        <div class="control-text">
+                                            <h3>Afeitado</h3>
+                                            <p>¿Utilizas un recipiente con agua para enjuagar el rastrillo?</p>
+                                        </div>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <!-- COLUMNA 2: Hogar y Exterior -->
+                        <div>
+                            <div class="control-column-title">Hogar y Exterior</div>
+                            
+                            <!-- Control 7: Platos -->
+                            <div class="control-item">
+                                <div class="control-header">
+                                    <div class="control-info">
+                                        <div class="control-icon"><i data-lucide="utensils" size="20"></i></div>
+                                        <div class="control-text">
+                                            <h3>Lavado de Platos</h3>
+                                            <p>¿En tu hogar reutilizan el agua <br>para lavar platos?</p>
+                                        </div>
+                                    </div>
+                                  <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <!-- Control 8: lavado de ropa -->
+                            <div class="control-item">
+                                <div class="control-header">
+                                    <div class="control-info">
+                                        <div class="control-icon">
+                                            <i data-lucide="washing-machine" size="20"></i>
+                                        </div>
+                                        <div class="control-text">
+                                            <h3>Lavado de ropa</h3>
+                                            <p>¿Cuántas veces a la <br> semana lavas la ropa?</p>
+                                        </div>
+                                    </div>
+                                    <div class="control-value" id="val-ropa-1">3 veces</div>
+                                </div>
+                            
+                                <div class="slider-container">
+                                    <input type="range" min="0" max="7" value="3"
+                                        oninput="document.getElementById('val-ropa-1').innerText = this.value + ' veces'">
+                            
+                                    <div class="slider-labels">
+                                        <span>0</span>
+                                        <span>7</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Control 9: Tanque lleno de ropa -->
+                            <div class="control-item">
+                                <div class="control-header">
+                                    <div class="control-info">
+                                        
+                                        <div class="control-text">
+                                            <h3>Carga de ropa</h3>
+                                            <p>Indica si procuras que la carga sea completa</p>
+                                        </div>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            
+                            <!-- Control 10: Auto -->
+                            <div class="control-item">
+                                <div class="control-header">
+                                    <div class="control-info">
+                                        <div class="control-icon"><i class="fa-solid fa-car" size="20"></i></div>
+                                        <div class="control-text">
+                                            <h3>Lavado de Auto </h3>
+                                            <p>Selecciona si usas manguera o cubeta<br>para lavar el carro</p>
+                                        </div>
+                                    </div>
+                                    <div class="segmented-control">
+                                        <input type="radio" id="auto-mang-1" name="auto1" checked>
+                                        <label for="auto-mang-1">Manguera</label>
+                                        <input type="radio" id="auto-cubeta-1" name="auto1">
+                                        <label for="auto-cubeta-1">Cubeta</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Control 11: Jardín -->
+                            <div class="control-item">
+                                <div class="control-header">
+                                    <div class="control-info">
+                                        <div class="control-icon"><i class="fa-solid fa-seedling"size="20"></i></div>
+                                        <div class="control-text">
+                                            <h3>Riego de Jardín</h3>
+                                            <p>Minutos por semana</p>
+                                        </div>
+                                    </div>
+                                    <div class="control-value" id="val-jardin">30 min</div>
+                                </div>
+                                <div class="slider-container">
+                                    <input type="range" min="0" max="120" value="30" oninput="document.getElementById('val-jardin').innerText = this.value + ' min'">
+                                    <div class="slider-labels">
+                                        <span>0 min</span>
+                                        <span>120 min</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <button class="btn-calculate">
+                            <i data-lucide="calculator" size="20"></i> Calcular Consumo
+                            </button> 
+                    </div>
+
+                    <!-- LADO DERECHO: Resultados -->
+                    <div class="results-panel">
+                        
+                        <div class="results-header">
+                            <i data-lucide="bar-chart-2" size="14"></i> Análisis en Tiempo Real
+                        </div>
+
+                        <!-- Tarjeta de Total -->
+                        <div class="total-card">
+                            <div class="total-card-subtitle">CONSUMO ESTIMADO TOTAL</div>
+                            <div class="total-number-wrapper">
+                                <i data-lucide="droplet" fill="currentColor"></i>
+                                <span class="total-number">0</span>
+                                <span class="total-unit">L/Sem</span>
+                            </div>
+                            <div class="total-card-footer">
+                                Equivalente a <strong>0 botellas</strong> de agua.
+                            </div>  
+                        </div>
+
+                        <!-- Desglose de Consumo (Barras de progreso) -->
+                        <div class="breakdown-title">Desglose de Consumo</div>
+                        
+                        <div class="breakdown-list">
+                            
+                            <!-- Grupo 1 -->
+                            <div class="breakdown-item">
+                                <div class="breakdown-header">
+                                    <span class="breakdown-label"><i class="fa-solid fa-shower" size="14" style="color: currentColor; background: none;""></i> Ducha</span>
+                                    <span class="breakdown-value">0%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill fill-cyan" style="width: 0%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="breakdown-item">
+                                <div class="breakdown-header">
+                                    <span class="breakdown-label"><i class="fa-solid fa-seedling" size="14" style="color: currentColor; background: none;"></i> Jardín</span>
+                                    <span class="breakdown-value">0%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill fill-teal" style="width: 0%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="breakdown-item">
+                                <div class="breakdown-header">
+                                    <span class="breakdown-label"><i class="fa-solid fa-toilet" size="14" style="color: currentColor; background: none;"></i> Sanitarios</span>
+                                    <span class="breakdown-value">0%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill fill-purple" style="width: 0%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="breakdown-item">
+                                <div class="breakdown-header">
+                                    <span class="breakdown-label"><i class="fa-solid fa-tshirt" size="14" style="color: currentColor; background: none;"></i> Ropa</span>
+                                    <span class="breakdown-value">0%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill fill-gray" style="width: 0%;"></div>
+                                </div>
+                            </div>
+
+                            <!-- Grupo 2 (Repeticiones como en la plantilla) -->
+                            <div class="breakdown-item">
+                                <div class="breakdown-header">
+                                    <span class="breakdown-label"><i class="fa-solid fa-sink"size="14" style="color: currentColor; background: none;"></i> Lava Manos</span>
+                                    <span class="breakdown-value">0%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill fill-pink" style="width: 0%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="breakdown-item">
+                                <div class="breakdown-header">
+                                    <span class="breakdown-label"><i class="fa-solid fa-seedling" size="14" style="color: currentColor; background: none;"></i>Lavado de Platos</span>
+                                    <span class="breakdown-value">0%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill fill-orange" style="width: 0%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="breakdown-item">
+                                <div class="breakdown-header">
+                                    <span class="breakdown-label"><i class="fa-solid fa-car" size="14" style="color: currentColor; background: none;"></i> Auto</span>
+                                    <span class="breakdown-value">0%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill fill-yellow" style="width: 0%;"></div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <!-- Botón Descargar -->
+                        <button class="btn-download">
+                            <i data-lucide="download" size="20"></i> Descargar Informe PDF
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+               <!-- aqui es la separacion entre la calculadora y el juego -->
+
+
+
+
+
+
+            
+           <div class="dash-wrapper">
+                
+                <div class="dash-header">
+                    <div>
+                        <div class="dash-badge">
+                            <i data-lucide="calendar" size="14"></i> REPORTE EN TIEMPO REAL
+                        </div>
+                        <h2>Seguimiento <span>Semanal</span></h2>
+                        <p>Monitorea tu consumo  y reduce el impacto ambiental.</p>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="dash-btn dash-btn-outline">Semana Anterior</button>
+                        <button class="dash-btn dash-btn-primary">Semana Actual</button>
+                    </div>
+                </div>
+
+                <section class="kpi-grid">
+                    
+                    <div class="dash-card kpi-card">
+                        <i data-lucide="droplets" style="position: absolute; right: -20px; top: -20px; opacity: 0.03; width: 140px; height: 140px;"></i>
+                        <div class="kpi-label">Consumo esta semana</div>
+                        <div class="val">14,986 <span class="unit">L</span></div>
+                        <div class="trend-badge">
+                            <i data-lucide="trending-down" size="14"></i> -12% vs anterior
+                        </div>
+                        <div style="font-size: 0.65rem; font-weight: 700; color: var(--dash-text-light); margin-top: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                            Actualizado 
+                        </div>
+                    </div>
+
+                    <div class="dash-card kpi-card">
+                        <i data-lucide="activity" style="position: absolute; right: -20px; top: -20px; opacity: 0.03; width: 140px; height: 140px;"></i>
+                        <div class="kpi-label">Promedio Diario</div>
+                        <div class="val" style="color: var(--dash-primary)">2,141 <span class="unit">L</span></div>
+                        
+                        <div class="efficiency-tag">
+                            <span style="width: 8px; height: 8px; background: var(--dash-primary); border-radius: 50%;"></span>
+                            Eficiencia: Óptima
+                        </div>
+                        
+                        <div style="font-size: 0.65rem; font-weight: 700; color: var(--dash-text-light); margin-top: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                            Basado en actividad de 1 día
+                        </div>
+                    </div>
+
+                    <div class="dash-card kpi-card kpi-cyan">
+                        <i data-lucide="target" style="position: absolute; right: -20px; bottom: -20px; opacity: 0.15; width: 140px; height: 140px;"></i>
+                        <div class="kpi-label">Equivalencia</div>
+                        <div class="val">2,997 <span class="unit" style="color: var(--dash-primary-soft)"></span></div>
+                        <div style="font-weight: 700; font-size: 0.9rem; margin-top: 0.5rem; letter-spacing: -0.01em;">Botellas de agua salvadas</div>
+                        <div style="font-size: 0.65rem; font-weight: 800; color: var(--dash-primary-soft); margin-top: 1rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.8;">
+                            Impacto Ambiental Positivo
+                        </div>
+                    </div>
+
+                </section>
+
+                <div class="dash-main-layout">
+                    
+                    <div class="dash-card chart-section">
+                        <div class="section-header">
+                            <div class="section-title">
+                                <div class="indicator-dot"></div>
+                                Tendencia Diaria
+                            </div>
+                            <select style="padding: 0.5rem; border-radius: 12px; border: none; background: #f8fafc; font-weight: 700; font-size: 0.7rem; outline: none; cursor: pointer;">
+                                <option>Últimos 7 días</option>
+                                <option>Últimas 30 días</option>
+                            </select>
+                        </div>
+                      <div class="dash-chart-wrapper">
+    <canvas id="consumptionChart"></canvas>
+</div>
+                    </div>
+
+                    <div class="dash-card">
+                        <div class="kpi-label" style="margin-bottom: 1.5rem;">Análisis por Categoría</div>
+                        
+                        <div class="category-list">
+                            <div class="category-item">
+                                <div class="cat-info">
+                                    <div class="cat-label">
+                                        <span class="cat-icon"><i data-lucide="shower-head" size="14"></i></span> Ducha
+                                    </div>
+                                    <span>6,000 L</span>
+                                </div>
+                                <div class="dash-progress-container"><div class="dash-progress-fill" style="width: 40%;"></div></div>
+                            </div>
+
+                            <div class="category-item">
+                                <div class="cat-info">
+                                    <div class="cat-label">
+                                        <span class="cat-icon"><i data-lucide="hand-metal" size="14"></i></span> Lava Manos
+                                    </div>
+                                    <span>2,484 L</span>
+                                </div>
+                                <div class="dash-progress-container"><div class="dash-progress-fill" style="width: 16.6%;"></div></div>
+                            </div>
+
+                            <div class="category-item">
+                                <div class="cat-info">
+                                    <div class="cat-label">
+                                        <span class="cat-icon"><i data-lucide="tree-pine" size="14"></i></span> Jardín
+                                    </div>
+                                    <span>2,322 L</span>
+                                </div>
+                                <div class="dash-progress-container"><div class="dash-progress-fill" style="width: 15.5%;"></div></div>
+                            </div>
+
+                            <div class="category-item">
+                                <div class="cat-info">
+                                    <div class="cat-label">
+                                        <span class="cat-icon"><i data-lucide="car" size="14"></i></span> Auto
+                                    </div>
+                                    <span>1,720 L</span>
+                                </div>
+                                <div class="dash-progress-container"><div class="dash-progress-fill" style="width: 11.5%;"></div></div>
+                            </div>
+
+                            <div class="category-item">
+                                <div class="cat-info">
+                                    <div class="cat-label">
+                                        <span class="cat-icon"><i data-lucide="shirt" size="14"></i></span> Ropa
+                                    </div>
+                                    <span>1,290 L</span>
+                                </div>
+                                <div class="dash-progress-container"><div class="dash-progress-fill" style="width: 8.6%;"></div></div>
+                            </div>
+
+                            <div class="category-item">
+                                <div class="cat-info">
+                                    <div class="cat-label">
+                                        <span class="cat-icon"><i data-lucide="utensils" size="14"></i></span> Lavado de Platos
+                                    </div>
+                                    <span>900 L</span>
+                                </div>
+                                <div class="dash-progress-container"><div class="dash-progress-fill" style="width: 6.0%;"></div></div>
+                            </div>
+
+                            <div class="category-item">
+                                <div class="cat-info">
+                                    <div class="cat-label">
+                                        <span class="cat-icon"><i data-lucide="toilet" size="14"></i></span> Sanitarios
+                                    </div>
+                                    <span>270 L</span>
+                                </div>
+                                <div class="dash-progress-container"><div class="dash-progress-fill" style="width: 1.8%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-content">
+                        <h4>Tip de la semana</h4>
+                        <p>Tu consumo en <b>Duchas</b> subió un 5% el sábado. ¡Usa el cronómetro integrado para ahorrar 20L mañana!</p>
+                    </div>
+                    <div class="tip-action">
+                        VER CONSEJOS <i data-lucide="chevron-right" size="14"></i>
+                    </div>
+                </div>
+
+            </div>
+
+             
+        </div>
+    </main>
+
+
+    
+
+     <div class="footer-bottom">
+                <p>&copy; 2026 EcoAqua. Todos los derechos reservados. Educando para un futuro sostenible.</p>
+            </div>
+      
+   
+
+    <!-- Inicializar iconos Lucide -->
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <script src="script/calculadora.js"></script>
+    <script src="script/historial.js"></script>
+     <script src="script/sesion.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</body>
+    

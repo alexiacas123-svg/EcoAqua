@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impacto - AguaVida</title>
+    
+    <!-- Fuentes e Iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+     <link rel="stylesheet" href="css/mayorconsumo.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+</head>
+
+<body>
+
+    <!-- CABECERA -->
+    <div class="nav-wrapper">
+     <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">
+                   <img src="img/logo.png" alt="Logo AguaVida">
+                </div>
+                <span>EcoAqua</span>
+            </div>
+      
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="importancia.html">Importancia</a></li>
+                     <li><a href="mayorconsumo.html">Mayor consumo</a></li>
+                    <li><a href="consejos.html">Consejos</a></li>
+                    
+                    
+                    
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+              
+                <button class="btn btn-primary" onclick="window.location.href='calculadora.html'">
+                     Calcula tu ahorro
+                </button>
+
+                <button class="btn btn-outline btn-jugar" onclick="window.location.href='juego.html'">
+                    <i data-lucide="gamepad-2"></i> Jugar
+                </button>
+
+
+                <button class="btn btn-sesion" id="boton-acceso" onclick="window.location.href='login.html'">
+                      <i></i> Iniciar sesión
+                </button>
+
+            </div>
+        </header>
+    </div>
+    </div>
+    
+  <main>
+        <div class="container">
+            
+            <!-- SECCIÓN HERO: MAYOR CONSUMO -->
+            <section class="consumption-hero">
+                <div class="consumption-text">
+                    <div class="badge">
+                        <i data-lucide="leaf" size="14"></i> CONCIENCIA AMBIENTAL
+                    </div>
+                    <h1 class="consumption-title">Actividades de<br><span class="text-blue">Mayor Consumo</span></h1>
+                    <p class="consumption-desc">
+                        El agua es un recurso finito. Conoce cuánta agua gastan tus tareas diarias y aprende estrategias prácticas para reducir el desperdicio en tu hogar.
+                    </p>
+                </div> 
+                
+                <div class="floating-icon-large">
+                    <i class="fa-solid fa-droplet" style="font-size: 2.5rem;"></i>
+                </div>
+            </section>
+
+            <!-- CUADRÍCULA DE 4 MÉTRICAS RÁPIDAS -->
+            <section class="grid-4">
+                <!-- Tarjeta 1: Lavadora -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon">
+                            <i data-lucide="washing-machine" size="20"></i> <!-- Usando icono alternativo, o 'shirt' -->
+                            <i data-lucide="shirt" size="20"></i>
+                        </div>
+                        <span class="sev-badge sev-alto">Alto</span>
+                    </div>
+                    <h3 class="metric-title">Lavadora</h3>
+                    <p class="metric-subtitle">Carga completa</p>
+                    <div class="metric-value-container">
+                        <span class="metric-value">100 L</span>
+                    </div>
+                    <span class="metric-unit">por carga</span>
+                </div>
+
+                <!-- Tarjeta 2: Lavavajillas -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon">
+                            <i class="fa-solid fa-sink" size="20"></i>
+                        </div>
+                        <span class="sev-badge sev-medio">Medio</span>
+                    </div>
+                    <h3 class="metric-title">Lavado de manos</h3>
+                    <p class="metric-subtitle">Cuando no cierras la llave</p>
+                    <div class="metric-value-container">
+                        <span class="metric-value">45 L</span>
+                    </div>
+                    <span class="metric-unit">por semana</span>
+                </div>
+
+                <!-- Tarjeta 3: Riego de Jardín -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon">
+                            <i class="fa-solid fa-car" size="20"></i>
+                        </div>
+                        <span class="sev-badge sev-alto">Muy Alto</span>
+                    </div>
+                    <h3 class="metric-title">Lavado de Autos</h3>
+                    <p class="metric-subtitle">Manguera</p>
+                    <div class="metric-value-container">
+                        <span class="metric-value">400 L</span>
+                    </div>
+                    <span class="metric-unit">Cada vez</span>
+                </div>
+
+                <!-- Tarjeta 4: Ducha Larga -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon">
+                            <i class="fa-solid fa-shower" size="20"></i>
+                        </div>
+                        <span class="sev-badge sev-alto">Alto</span>
+                    </div>
+                    <h3 class="metric-title">Ducha Larga</h3>
+                    <p class="metric-subtitle">10 minutos</p>
+                    <div class="metric-value-container">
+                        <span class="metric-value">200 L</span>
+                    </div>
+                    <span class="metric-unit">por persona</span>
+                </div>
+            </section>
+
+            <!-- ENCABEZADO DE SECCIÓN DETALLES -->
+            <div class="section-header-flex">
+                <h2>Detalle por Actividad</h2>
+                <a href="#" class="view-all-link">Ver todos los consejos <i data-lucide="arrow-right" size="16"></i></a>
+            </div>
+
+            <!-- CUADRÍCULA DE 3 TARJETAS DETALLADAS -->
+            <section class="grid-3">
+                
+                <!-- Detalle 1: Ropa -->
+                <div class="detail-card">
+                    <div class="detail-img-wrapper">
+                        <img src="img/Lavar_ropa.png" alt="Cesta de ropa">
+                        <div class="detail-floating-badge">~15% uso doméstico</div>
+                    </div>
+                    <div class="detail-content">
+                        <h3 class="detail-title"><i data-lucide="thumbs-up" size="18"></i> Lavado de Ropa</h3>
+                        <p class="detail-desc">Una lavadora antigua puede usar hasta 150 litros por carga. Las modernas usan cerca de 100 litros. Siempre espera a tener la carga completa.</p>
+                        <span class="detail-footer-badge">Ahorro: 50 L/carga</span>
+                    </div>
+                </div>
+
+                <!-- Detalle 2: Vajilla -->
+                <div class="detail-card">
+                    <div class="detail-img-wrapper">
+                        <img src="img/bañarse.png"alt="Baño ">
+                        <div class="detail-floating-badge">Frecuencia diaria</div>
+                    </div>
+                    <div class="detail-content">
+                        <h3 class="detail-title"><i data-lucide="waves" size="18"></i> Limpieza de Vajilla</h3>
+                        <p class="detail-desc">Lavar a mano con el grifo abierto consume 10 veces más que un lavavajillas eficiente. Usa una tina para enjabonar si lavas a mano.</p>
+                        <span class="detail-footer-badge">Tip: Usa tapón</span>
+                    </div>
+                </div>
+
+                <!-- Detalle 3: Jardín -->
+                <div class="detail-card">
+                    <div class="detail-img-wrapper">
+                        <img src="img/Jardines_Importante.jpg" alt="Regando plantas">
+                        <div class="detail-floating-badge">Estacional</div>
+                    </div>
+                    <div class="detail-content">
+                        <h3 class="detail-title"><i data-lucide="book" size="18"></i> Cuidado del Jardín</h3>
+                        <p class="detail-desc">Riega temprano en la mañana o al anochecer para evitar la evaporación. Considera usar sistemas de goteo o plantas nativas.</p>
+                        <span class="detail-footer-badge">Riego Eficiente</span>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- BANNER CALL TO ACTION (Calculadora) -->
+            <section class="cta-banner">
+                <div class="cta-icon">
+                    <i data-lucide="calculator" size="32" color="white"></i>
+                </div>
+                <h2>¿Sabes cuanta agua consumes?</h2>
+                <p>Descubre exactamente cuánta agua consume tu hogar con nuestra calculadora personalizada y lleva un registro semanal.</p>
+                <button class="btn-white"  onclick="window.location.href='calculadora.html'">
+                    Calcular mi consumo <i data-lucide="arrow-right" size="18"></i>
+                </button>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+
+        <div class="container">
+         
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 EcoAqua. Todos los derechos reservados. Diseñando un futuro con agua para todos.</p>
+            </div>
+        </div>
+   
+
+    <!-- Inicializar iconos Lucide -->
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <script src="../script/sesion.js"></script>
+</body>
+</html>

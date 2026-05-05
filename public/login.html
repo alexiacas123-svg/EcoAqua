@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - EcoAqua</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+    <div class="login-card">
+        <div class="logo-box">
+            <img src="img/logo.png" alt="Logo EcoAqua" class="logo-image">
+        </div>
+
+        <h1 class="brand-name">EcoAqua</h1>
+        <p class="brand-tagline">Gestión inteligente del agua</p>
+
+        <form class="login-form">
+        
+            <div class="divider">
+                <div class="line"></div>
+                <span class="divider-text">Acceder con:</span>
+                <div class="line"></div>
+            </div>
+
+            <div style="display: flex; justify-content: center; width: 100%;">
+                <div id="g_id_onload"
+                     data-client_id="218489763476-v63vmr2p58ddi27567ts20splphm87f6.apps.googleusercontent.com"
+                     data-context="signin"
+                     data-ux_mode="popup"
+                     data-callback="manejarRespuestaGoogle"
+                     data-auto_prompt="false">
+                </div>
+                
+                <div class="g_id_signin" 
+                     data-type="standard" 
+                     data-shape="pill"
+                     data-theme="outline" 
+                     data-text="continue_with"
+                     data-size="large"
+                     data-logo_alignment="center">
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <script>
+        // 1. Inicializamos tus iconos Lucide
+        lucide.createIcons();
+
+        // 2. Traductor del token de Google
+        function decodificarJwt(token) {
+            const base64Url = token.split('.')[1];
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+            return JSON.parse(jsonPayload);
+        }
+
+        // 3. Función que envía los datos a tu servidor
+        function manejarRespuestaGoogle(response) {
+            const datosUsuario = decodificarJwt(response.credential);
+            
+            const paqueteDatos = {
+                googleId: datosUsuario.sub,
+                nombre: datosUsuario.name,
+                correo: datosUsuario.email
+            };
+
+            // Mandamos los datos a tu Node.js (Asegúrate de que 'node script/servidor.js' esté corriendo)
+            fetch('/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(paqueteDatos)
+            })
+            .then(respuesta => respuesta.json())
+            .then(data => {
+                console.log("Servidor AWS responde:", data.mensaje);
+                
+                // ¡AQUÍ ESTÁ LA MAGIA PARA LA PESTAÑA DE CONSEJOS! 
+                // Guardamos el gafete en el navegador
+                localStorage.setItem('usuarioEcoAqua', JSON.stringify(paqueteDatos));
+                
+                alert("¡Bienvenida, " + paqueteDatos.nombre + "!");
+                
+                // Redirige al inicio si el login es exitoso
+                window.location.href = "index.html"; 
+            })
+            .catch(error => console.error("Error de conexión con el servidor:", error));
+        }
+    </script>
+
+</body>
+</html>

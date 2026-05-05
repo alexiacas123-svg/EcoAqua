@@ -1,0 +1,291 @@
+.grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+.consumption-hero {
+            padding: 4rem 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .consumption-text {
+            max-width: 600px;
+        }
+
+        .consumption-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+        }
+
+        .consumption-desc {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+        }
+
+        .floating-icon-large {
+            width: 90px;
+            height: 90px;
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0, 132, 255, 0.15);
+        }
+
+        /* --- Cuadrícula de 4 Tarjetas Rápidas --- */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .metric-card {
+            background-color: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .metric-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .metric-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Etiquetas de severidad */
+        .sev-badge {
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        
+        .sev-alto { background-color: var(--light-red); color: var(--primary-red); }
+        .sev-medio { background-color: var(--light-yellow); color: var(--primary-yellow); }
+
+        .metric-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .metric-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .metric-value-container {
+            display: flex;
+            align-items: baseline;
+            gap: 0.3rem;
+        }
+
+        .metric-value {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1;
+        }
+
+        .metric-unit {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        /* --- Encabezado de Sección --- */
+        .section-header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-header-flex h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .view-all-link {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.2s ease;
+        }
+
+        .view-all-link:hover {
+            gap: 0.75rem;
+        }
+
+        /* --- Tarjetas Detalladas (Grid 3) --- */
+        .detail-card {
+            background-color: white;
+            border-radius: 1.25rem;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .detail-img-wrapper {
+            position: relative;
+            height: 200px;
+            width: 100%;
+        }
+
+        .detail-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .detail-floating-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: white;
+            color: var(--text-dark);
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 0.4rem 0.8rem;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .detail-content {
+            padding: 1.5rem;
+        }
+
+        .detail-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .detail-title i {
+            color: var(--primary-blue);
+        }
+
+        .detail-desc {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .detail-footer-badge {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            background-color: var(--light-blue);
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+        }
+
+        /* --- Banner CTA (Calculadora) --- */
+        .cta-banner {
+            background-color: var(--primary-blue); /* Azul vibrante basado en el diseño */
+            background-image: linear-gradient(135deg, #6cd8ec 0%, #3082a8 100%);
+            border-radius: 1.5rem;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+            margin: 4rem 0 6rem 0;
+            box-shadow: 0 20px 25px -5px rgba(47, 176, 249, 0.3);
+        }
+
+        .cta-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 1.5rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 14px;
+            backdrop-filter: blur(4px);
+        }
+
+        .cta-banner h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .cta-banner p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .btn-white {
+            background-color: white;
+            color:#30bece;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            font-weight: 800;
+            font-size: 1.05rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- RESPONSIVO PARA ESTA PÁGINA --- */
+        @media (max-width: 1024px) {
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .consumption-hero { flex-direction: column; text-align: center; gap: 2rem; padding: 2rem 0; }
+            .consumption-text { margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+        }
+
+        @media (max-width: 768px) {
+            .grid-4 { grid-template-columns: 1fr; }
+            .grid-3 { grid-template-columns: 1fr; }
+            .consumption-title { font-size: 2.5rem; }
+            .section-header-flex { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .cta-banner { padding: 3rem 1.5rem; }
+            .cta-banner h2 { font-size: 2rem; }
+        }

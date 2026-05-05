@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/consejos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <title>EcoAqua</title>
+</head>
+<body>
+    <div class="nav-wrapper">
+     <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">
+                   <img src="img/logo.png" alt="Logo AguaVida">
+                </div>
+                <span>EcoAqua</span>
+            </div>
+      
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="importancia.html">Importancia</a></li>
+                     <li><a href="mayorconsumo.html">Mayor consumo</a></li>
+                    <li><a href="consejos.html">Consejos</a></li>
+                    
+                    
+                    
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+              
+                <button class="btn btn-primary" onclick="window.location.href='calculadora.html'">
+                     Calcula tu ahorro
+                </button>
+
+                <button class="btn btn-outline btn-jugar" onclick="window.location.href='juego.html'">
+                    <i data-lucide="gamepad-2"></i> Jugar
+                </button>
+
+
+                <button class="btn btn-sesion" id="boton-acceso" onclick="window.location.href='login.html'">
+                      <i></i> Iniciar sesión
+                </button>
+
+            </div>
+        </header>
+    </div>
+    </div>
+
+    
+    
+
+
+    <main>
+        <div class="container">
+            
+            <!-- ENCABEZADO DE PÁGINA -->
+            <section class="page-header">
+                <div class="badge">
+                    <i data-lucide="check-circle" size="14"></i> GUÍA CATEGORIZADA Y PRÁCTICA
+                </div>
+                <h1 class="page-title">Consejos para Ahorrar Agua</h1>
+                <p class="page-desc">
+                    Optimiza tu consumo diario con acciones específicas diseñadas para cada rincón de tu hogar.
+                </p>
+            </section>
+
+            <!-- LAYOUT PRINCIPAL -->
+            <div class="ahorro-layout">
+                
+                <!-- COLUMNA IZQUIERDA (Contenido Principal) -->
+                <div class="main-content">
+                    
+                    <div class="title-with-line">
+                        <div class="title-line"></div>
+                        <h2>Acciones Inmediatas</h2>
+                    </div>
+
+                    <!-- Pestañas -->
+                    <div class="category-tabs">
+                        <button class="tab-btn active"><i data-lucide="bath" size="18"></i> Baño</button>
+                        <button class="tab-btn"><i data-lucide="utensils" size="18"></i> Cocina</button>
+                        <button class="tab-btn"><i data-lucide="washing-machine" size="18"></i> Lavado</button>
+                        <button class="tab-btn"><i data-lucide="tree-deciduous" size="18"></i> Jardín</button>
+                    </div>
+
+                    <!-- Acordeón 1: Expandido -->
+                    
+
+                    <div class="errors-section">
+                        <h2 class="errors-title">
+                            <i data-lucide="alert-circle" size="24"></i> Errores Comunes
+                        </h2>
+                        
+                        <div class="errors-grid">
+                            <div class="error-card">
+                                <div class="error-icon"><i data-lucide="x" size="18" stroke-width="3"></i></div>
+                                <div>
+                                    <h4>Dejar el grifo abierto</h4>
+                                    <p>Al lavarse los dientes o afeitarse.</p>
+                                </div>
+                            </div>
+                            <div class="error-card">
+                                <div class="error-icon"><i data-lucide="x" size="18" stroke-width="3"></i></div>
+                                <div>
+                                    <h4>Usar el inodoro como papelera</h4>
+                                    <p>Cada descarga innecesaria gasta 6-12L.</p>
+                                </div>
+                            </div>
+                            <div class="error-card">
+                                <div class="error-icon"><i data-lucide="x" size="18" stroke-width="3"></i></div>
+                                <div>
+                                    <h4>Ignorar goteos leves</h4>
+                                    <p>Un goteo puede perder 30L al día.</p>
+                                </div>
+                            </div>
+                            <div class="error-card">
+                                <div class="error-icon"><i data-lucide="x" size="18" stroke-width="3"></i></div>
+                                <div>
+                                    <h4>Regar a mediodía</h4>
+                                    <p>El agua se evapora antes de ser absorbida.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- COLUMNA DERECHA -->
+                <div class="sidebar">
+                    
+                    <!-- Tarjeta Meta -->
+                    <div class="goal-card">
+                        <div class="goal-icon">
+                            <i data-lucide="bar-chart-2" size="24"></i>
+                        </div>
+                        <div class="goal-text">
+                            <span>META MENSUAL</span>
+                            <h3>-4,500 Litros</h3>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Cultura del Agua -->
+                    <div class="culture-card">
+                        <div class="culture-top">
+                           
+                            
+                         <h2 class="feedback-title">Enviar comentarios</h2>
+                        </div>
+                        <div class="culture-bottom">
+        <div class="feedback-card">                 
+         <div class="textarea-wrapper">
+            <textarea 
+                class="feedback-textarea" 
+                placeholder="Cuéntanos cómo podemos mejorar EcoAqua..."
+            ></textarea>
+        </div>
+
+       <div class="feedback-actions">
+            <!-- Grupo de caritas a la izquierda -->
+            <div class="reaction-group">
+                <button class="reaction-btn" title="¡Me encanta!">
+                    <i data-lucide="smile"></i>
+                    <span class="reaction-count"></span>
+                </button>
+                <button class="reaction-btn" title="Puede mejorar">
+                    <i data-lucide="frown"></i>
+                    <span class="reaction-count"></span>
+                </button>
+            </div>
+
+            <!-- Botón de enviar a la derecha -->
+            <button class="send-btn">
+                <span>Enviar</span>
+                <i data-lucide="send"></i>
+            </button>
+        </div>
+                    </div>
+</div>   
+                </div>
+            </div>
+        </main>
+
+    <!-- FOOTER -->
+   
+            <div class="footer-bottom">
+                <p>&copy; 2026 EcoAqua. Todos los derechos reservados. Educando para un futuro sostenible.</p>
+            </div>
+      
+   
+
+    <!-- Inicializar iconos Lucide -->
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="script/consejos.js"></script>
+    <script src="script/comentarios.js"></script>
+    <script src="script/sesion.js"></script>
+</body>
+</html>

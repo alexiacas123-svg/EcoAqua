@@ -1,0 +1,390 @@
+ :root {
+            --water-blue: #0ea5e9;
+            --deep-ocean: #0c4a6e;
+            --cyan-glow: #22d3ee;
+            --cyan-200: #a5f3fc;
+            --cyan-300: #67e8f9;
+            --cyan-400: #22d3ee;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #0d6790 0%, #0ea5c9 50%, #36d6e8 100%);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* =========================================================
+           EFECTOS DE FONDO
+           ========================================================= */
+        .bg-blob {
+            position: fixed;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+            border-radius: 50%;
+            animation: drift 20s infinite alternate ease-in-out;
+        }
+        
+        .blob-1 { width: 600px; height: 600px; background: #36d6e8; top: -10%; left: -10%; }
+        .blob-2 { width: 500px; height: 500px; background: #28b0bf; bottom: -10%; right: -10%; animation-delay: -5s; }
+        .blob-3 { width: 400px; height: 400px; background: #30bece; top: 40%; left: 30%; animation-delay: -10s; }
+
+        @keyframes drift {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(100px, 50px) scale(1.1); }
+        }
+
+        .caustics {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.015' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.15;
+            mix-blend-mode: overlay;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* =========================================================
+           LAYOUT PRINCIPAL
+           ========================================================= */
+        .layout-wrapper {
+            max-width: 1152px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            justify-content: center;
+        }
+
+        .dashboard {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            gap: 4rem;
+        }
+
+        /* =========================================================
+           HEADER
+           ========================================================= */
+        .header-section {
+            margin-bottom: 3.5rem;
+        }
+
+        .glow-header {
+            padding: 1.25rem 3.5rem;
+            border-radius: 1.5rem;
+            background: rgba(13, 22, 105, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            text-shadow: 0 0 30px rgba(34, 211, 238, 0.6);
+        }
+
+        .glow-header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin: 0;
+            text-align: center;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        /* =========================================================
+           TANQUE DE AGUA (con ola animada)
+           ========================================================= */
+        .visual-section {
+            flex-shrink: 0;
+        }
+
+        .glass-container {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            width: 300px;
+            height: 520px;
+            box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.1), 
+                        0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .water-level {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 65%;
+            background: linear-gradient(180deg, #22d3ee 0%, #0369a1 100%);
+            transition: height 1s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 -8px 20px rgba(34, 211, 238, 0.4);
+        }
+
+        /* OLA ANIMADA en la superficie */
+        .wave-svg {
+            position: absolute;
+            top: -22px;
+            left: 0;
+            width: 200%; /* doble de ancho para el desplazamiento */
+            height: 30px;
+            animation: wave-move 3s linear infinite;
+        }
+
+        .wave-svg path {
+            fill: #22d3ee;
+        }
+
+        @keyframes wave-move {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Reflejo superficial del cristal */
+        .surface-highlight {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            border-left: 1px solid rgba(255,255,255,0.3);
+            border-radius: 24px;
+            pointer-events: none;
+        }
+
+        /* Burbujas */
+        .bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: rise 4s infinite ease-in;
+        }
+
+        @keyframes rise {
+            0% { transform: translateY(0) scale(1); opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { transform: translateY(-400px) scale(1.5); opacity: 0; }
+        }
+
+        /* =========================================================
+           INTERFAZ DEL JUEGO
+           ========================================================= */
+        .game-interface {
+            flex-grow: 1;
+            max-width: 42rem;
+        }
+
+        /* Puntuación */
+        .scoreboard {
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            color: var(--cyan-200);
+            text-transform: uppercase;
+            margin-bottom: 2.5rem;
+        }
+        
+        .scoreboard .val { color: white; }
+        .scoreboard .divider { margin: 0 1rem; opacity: 0.3; }
+
+        /* Pista */
+        .clue-box {
+            min-height: 90px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            margin-bottom: 3rem;
+        }
+
+        .clue-box p {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: rgba(236, 254, 255, 0.9);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* =========================================================
+           CASILLAS DE LETRAS (diseño Imagen 2: caja completa)
+           ========================================================= */
+        .word-display {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 3.5rem;
+        }
+
+        .word-dash {
+            width: 52px;
+            height: 62px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: 800;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.25),
+                        0 4px 12px rgba(0,0,0,0.15);
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .word-dash.revealed {
+            background: rgba(34, 211, 238, 0.25);
+            border-color: rgba(34, 211, 238, 0.7);
+            transform: scale(1.05);
+        }
+
+        /* Alerta */
+        .alert-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(34, 38, 97, 0.2);
+            padding: 0.75rem 1.25rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            margin-bottom: 2.5rem;
+        }
+
+        .alert-box .text {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--cyan-300);
+            letter-spacing: 0.025em;
+        }
+
+        .alert-box .emoji {
+            font-size: 1.5rem;
+            animation: pulse-opacity 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse-opacity {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Letras Usadas */
+        .used-section {
+            margin-bottom: 3.5rem;
+        }
+
+        .used-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: rgba(212, 247, 251, 0.95);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .badges-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .used-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Botón */
+        .btn-wrapper {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .pill-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 3rem;
+            border-radius: 9999px;
+            font-family: inherit;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            font-size: 1.125rem;
+            color: white;
+            cursor: pointer;
+            background: linear-gradient(90deg, #28b0bf 0%, #36d6e8 100%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pill-button:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 0 25px rgba(34, 211, 238, 0.6);
+            filter: brightness(1.1);
+        }
+
+        .pill-button svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        /* Botón salir */
+        .btn-salir {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 999;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background: #ff4d4d;
+            color: white;
+            font-family: inherit;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 77, 77, 0.7);
+            transition: background 0.2s;
+        }
+
+        .btn-salir:hover {
+            background: #ff1a1a;
+        }
+
+        /* =========================================================
+           RESPONSIVIDAD
+           ========================================================= */
+        @media (max-width: 1024px) {
+            .dashboard { flex-direction: column; }
+            .scoreboard, .btn-wrapper, .word-display { justify-content: center; text-align: center; }
+            .alert-box { margin-left: auto; margin-right: auto; display: flex; }
+        }
+
+        @media (max-width: 768px) {
+            .glow-header h1 { font-size: 2.25rem; }
+            .glow-header { padding: 1rem 2rem; }
+        }

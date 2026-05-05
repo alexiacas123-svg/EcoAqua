@@ -1,0 +1,248 @@
+:root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --primary-color: #36d6e8; /* sky-400 */
+            --primary-hover: #28b0bf; /* sky-500 */
+            --text-main: #1e293b;    /* slate-800 */
+            --text-muted: #94a3b8;   /* slate-400 */
+            --text-light: #cbd5e1;   /* slate-300 */
+            --input-bg: #f1f5f9;     /* slate-100/50 */
+            --border-color: #f1f5f9;
+            --shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        /* Contenedor Principal (La Tarjeta) */
+        .login-card {
+            background-color: var(--card-bg);
+            width: 100%;
+            max-width: 460px; /* Un poco más ancho como pediste */
+            border-radius: 50px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Logo e Iconos */
+        .logo-box {
+            width: 60px;
+            height: 60px;
+            background-color: #f0f9ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo-box i {
+            color: var(--primary-color);
+            width: 30px;
+            height: 30px;
+        }
+
+        .brand-name {
+            font-size: 1.875rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 0.25rem;
+        }
+
+        .brand-tagline {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Formulario */
+        .login-form {
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .label-style {
+            display: block;
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            width: 20px;
+            height: 20px;
+            transition: var(--transition);
+        }
+
+        .input-field {
+            width: 100%;
+            background-color: var(--input-bg);
+            border: 2px solid transparent;
+            border-radius: 24px;
+            padding: 0.875rem 1rem 0.875rem 3.5rem;
+            font-size: 0.9rem;
+            color: #475569;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .input-field::placeholder {
+            color: var(--text-light);
+        }
+
+        .input-field:focus {
+            background-color: #ffffff;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1);
+        }
+
+        .input-field:focus + .input-icon {
+            color: var(--primary-color);
+        }
+
+        .forgot-link {
+            display: block;
+            text-align: right;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-top: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+        .forgot-link:hover {
+            color: var(--primary-hover);
+        }
+
+        /* Botones */
+        .btn-primary {
+            width: 100%;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 24px;
+            padding: 1rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.2);
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+
+        /* Divisor */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1.25rem 0;
+        }
+
+        .line {
+            height: 1px;
+            background-color: #d3f9fb;
+            flex-grow: 1;
+        }
+
+        .divider-text {
+            font-size: 10px;
+            font-weight: 700;
+            color: #a2d9dc ;   
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            white-space: nowrap;
+        }
+      
+        /* Botón Google */
+        .btn-google {
+            width: 100%;
+            background-color: #f8fafc;
+            border: 1px solid transparent;
+            border-radius: 24px;
+            padding: 0.875rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-google:hover {
+            background-color: #f1f5f9;
+            border-color: #e2e8f0;
+        }
+
+        .btn-google span {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        /* Footer */
+        .card-footer {
+            margin-top: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .signup-link {
+            color: var(--primary-color);
+            font-weight: 700;
+            text-decoration: none;
+            margin-left: 0.25rem;
+        }
+
+        .signup-link:hover {
+            text-decoration: underline;
+        }

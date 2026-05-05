@@ -1,0 +1,245 @@
+
+         .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        /* Título con línea lateral azul */
+        .title-with-line {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .title-line {
+            width: 4px;
+            height: 28px;
+            background-color: var(--primary-blue);
+            border-radius: 4px;
+        }
+
+        .title-with-line h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        /* Sección: Importancia del Agua */
+        .importance-section {
+            padding: 4rem 0;
+            background-color: var(--bg-light);
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .info-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Sección: Recurso en Riesgo (Gris claro) */
+        .risk-section {
+            background-color: var(--bg-gray);
+            padding: 5rem 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .risk-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .risk-header h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .risk-header p {
+            color: var(--text-gray);
+            font-size: 1.05rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Tarjetas de Estadísticas */
+        .stat-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-badge {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.75rem;
+        }
+
+        .stat-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-dark);
+            z-index: 2;
+        }
+
+        .stat-bg-icon {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        /* Variaciones de color para tarjetas */
+        .stat-blue .stat-badge { background-color: var(--light-blue); color: var(--primary-blue); }
+        .stat-blue .stat-bg-icon { color: var(--primary-blue); }
+        
+        .stat-red .stat-badge { background-color: var(--light-red); color: var(--primary-red); }
+        .stat-red .stat-bg-icon { color: var(--primary-red); }
+        
+        .stat-green .stat-badge { background-color: var(--light-green); color: var(--primary-green); }
+        .stat-green .stat-bg-icon { color: var(--primary-green); }
+
+        .stat-value {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1;
+            margin-bottom: 0.75rem;
+            z-index: 2;
+            position: relative;
+        }
+
+        .stat-card p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Sección: Desigualdad en Distribución */
+        .distribution-section {
+            padding: 6rem 0;
+            background-color: var(--bg-light);
+        }
+
+        .dist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .dist-content h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .dist-content p {
+            color: var(--text-gray);
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+        }
+
+        .dist-content strong {
+            color: var(--text-dark);
+        }
+
+        .link-arrow {
+            color: var(--primary-blue);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            transition: gap 0.2s ease;
+        }
+
+        .link-arrow:hover {
+            gap: 0.75rem;
+        }
+
+                .dist-image-wrapper {
+                    position: relative;
+                    border-radius: 1rem;
+                    overflow: hidden;
+                    box-shadow: 0 10px 40px -5px rgba(0, 0, 0, 0.15),
+                      0 0 0 1px rgba(242, 241, 241, 0.848);
+                    background-color: var(--bg-gray);
+                    padding: 1.5rem;
+        
+                }
+
+        .dist-image-wrapper img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+   
+
+        /* --- RESPONSIVO --- */
+        @media (max-width: 1024px) {
+            .grid-3 { gap: 1rem; }
+            .dist-grid { gap: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .grid-3 { grid-template-columns: 1fr; }
+            .dist-grid { grid-template-columns: 1fr; }
+            .dist-image-wrapper img { height: 300px; }
+            .stat-value { font-size: 3rem; }
+            .footer-top { flex-direction: column; gap: 2rem; text-align: center; }
+        }

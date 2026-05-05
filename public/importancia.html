@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impacto - AguaVida</title>
+    
+    <!-- Fuentes e Iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/importancia.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+</head>
+
+<body>
+
+    <!-- CABECERA -->
+     
+     <div class="nav-wrapper">
+     <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">
+                   <img src="img/logo.png" alt="Logo AguaVida">
+                </div>
+                <span>EcoAqua</span>
+            </div>
+      
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="importancia.html">Importancia</a></li>
+                     <li><a href="mayorconsumo.html">Mayor consumo</a></li>
+                    <li><a href="consejos.html">Consejos</a></li>
+                    
+                    
+                    
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+              
+                <button class="btn btn-primary" onclick="window.location.href='calculadora.html'">
+                     Calcula tu ahorro
+                </button>
+
+                <button class="btn btn-outline btn-jugar" onclick="window.location.href='juego.html'">
+                    <i data-lucide="gamepad-2"></i> Jugar
+                </button>
+
+
+                <button class="btn btn-sesion" id="boton-acceso" onclick="window.location.href='login.html'">
+                      <i></i> Iniciar sesión
+                </button>
+
+            </div>
+        </header>
+    </div>
+    </div>  
+    <main>
+        <!-- SECCIÓN: IMPORTANCIA DEL AGUA -->
+        <section class="importance-section">
+            <div class="container">
+                <div class="title-with-line">
+                    <div class="title-line"></div>
+                    <h2>Importancia del Agua</h2>
+                </div>
+                
+                <div class="grid-3">
+                    <div class="info-card">
+                        <div class="icon-box">
+                            <i data-lucide="heart" size="24"></i>
+                        </div>
+                        <h3>Vida Humana</h3>
+                        <p>El agua es vital para el cuerpo humano porque permite funciones como la circulación, regular la temperatura y eliminar toxinas. Sin agua potable segura, la salud y la supervivencia se ven afectadas.</p>
+
+                    </div>
+
+                    <div class="info-card">
+                        <div class="icon-box">
+                            <i data-lucide="leaf" size="24"></i>
+                        </div>
+                        <h3>Ecosistemas</h3>
+                        <p>El agua mantiene el equilibrio de la naturaleza, ya que ríos, lagos y océanos sostienen muchas especies y ayudan a los ciclos naturales. Si el agua se contamina o escasea, los ecosistemas se dañan.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="icon-box">
+                            <i data-lucide="landmark" size="24"></i>
+                        </div>
+                        <h3>Desarrollo</h3>
+                        <p>El agua es necesaria para la agricultura, la industria y la producción de alimentos. Tener acceso al agua ayuda a mejorar la calidad de vida, la economía y la seguridad alimentaria.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: RECURSO EN RIESGO -->
+        <section class="risk-section">
+            <div class="container">
+                <div class="risk-header">
+                    <h2>El Agua en México: Un Recurso en Riesgo</h2>
+                    <p>México enfrenta importantes desafíos relacionados con la disponibilidad de agua. Factores como el cambio climático, el crecimiento de la población y el uso intensivo en actividades productivas han provocado estrés hídrico en varias regiones del país. La distribución del agua es desigual y muchas zonas enfrentan escasez, lo que afecta tanto al medio ambiente como al desarrollo social y económico. </p>
+                </div>
+
+                <div class="grid-3">
+                    <!-- Tarjeta Azul -->
+                    <div class="stat-card stat-blue">
+                        <div class="stat-header">
+                            <div class="stat-badge">
+                                <i data-lucide="droplet" size="18"></i>
+                            </div>
+                            <span class="stat-title">Disponibilidad</span>
+                        </div>
+                        <i data-lucide="droplets" class="stat-bg-icon"></i>
+                        <div class="stat-value">47%</div>
+                        <p>La disponibilidad de agua en México ha disminuido por el crecimiento de la población y la sobreexplotación de acuíferos. Además, gran parte del país enfrenta sequías cada año.</p>
+                    </div>
+
+                    <!-- Tarjeta Roja -->
+                    <div class="stat-card stat-red">
+                        <div class="stat-header">
+                            <div class="stat-badge">
+                                <i data-lucide="flask-round" size="18"></i>
+                            </div>
+                            <span class="stat-title">Estrés Hídrico</span>
+                        </div>
+                        <i data-lucide="alert-triangle" class="stat-bg-icon"></i>
+                        <div class="stat-value">Muy Alto</div>
+                        <p>Nivel nacional en las zonas norte y centro, donde reside la mayor parte de la población.</p>
+                    </div>
+
+                    <!-- Tarjeta Verde -->
+                    <div class="stat-card stat-green">
+                        <div class="stat-header">
+                            <div class="stat-badge">
+                                <i data-lucide="sprout" size="18"></i>
+                            </div>
+                            <span class="stat-title">Uso Agrícola</span>
+                        </div>
+                        <i data-lucide="tractor" class="stat-bg-icon"></i>
+                        <div class="stat-value">76%</div>
+                        <p>Del consumo total de agua en México se destina a la agricultura y ganadería.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: DISTRIBUCIÓN -->
+        <section class="distribution-section">
+            <div class="container">
+                <div class="dist-grid">
+                    <div class="dist-content">
+                        <h2>Desigualdad en la Distribución</h2>
+                        <p>En México el agua no se distribuye de manera uniforme. Las regiones norte, centro y noroeste, donde vive alrededor del 77 % de la población y se genera el 83 % del PIB, solo cuentan con 33 % del agua renovable del país. En cambio, el sur y sureste poseen 67 % del agua, pero albergan solo 23 % de la población.</p>
+                        <p>Esta desigualdad provoca escasez en varias regiones del país, lo que obliga a transportar agua desde otras zonas o a extraer más agua subterránea, además de poner en riesgo la viabilidad de ecosistemas enteros que dependen de flujos naturales de agua.</p>
+                        
+                        <a href="https://grupoincotex.com/blog/distribucion-del-agua-en-mexico-retos-y-soluciones/" class="link-arrow">
+                            Ver más información <i data-lucide="arrow-right" size="16"></i>
+                        </a>
+                    </div>
+
+                    <div class="dist-image-wrapper">
+                        <!-- Usando una imagen topográfica de Unsplash como placeholder del mapa -->
+                        <img src="img/mapa_mexico_agua.png"" alt="Mapa de cuencas hidrológicas">
+                       
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 EcoAqua. Todos los derechos reservados. Diseñando un futuro con agua para todos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inicializar iconos Lucide -->
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="script/sesion.js"></script>
+</body>
+</html>

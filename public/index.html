@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <title>EcoAqua</title>
+</head>
+<body>
+
+    <div class="nav-wrapper">
+     <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">
+                   <img src="img/logo.png" alt="Logo AguaVida">
+                </div>
+                <span>EcoAqua</span>
+            </div>
+      
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="importancia.html">Importancia</a></li>
+                     <li><a href="mayorconsumo.html">Mayor consumo</a></li>
+                    <li><a href="consejos.html">Consejos</a></li>
+                    
+                    
+                    
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+              
+                <button class="btn btn-primary" onclick="window.location.href='calculadora.html'">
+                     Calcula tu ahorro
+                </button>
+
+                <button class="btn btn-outline btn-jugar" onclick="window.location.href='juego.html'">
+                    <i data-lucide="gamepad-2"></i> Jugar
+                </button>
+
+
+                <button class="btn btn-sesion" id="boton-acceso" onclick="window.location.href='login.html'">
+                      <i></i> Iniciar sesión
+                </button>
+
+           
+        </header>
+    </div>
+    </div>
+    <!-- SECCIÓN HERO -->
+    <main>
+        <div class="container">
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="badge">
+                        <i data-lucide="leaf" size="14"></i> COMPROMISO 2026
+                    </div>
+                    <h1 class="hero-title">Cuidemos el agua,<br><span class="text-blue">cuidemos la vida</span></h1>
+                    <p class="hero-description">
+                        Descubre hábitos sencillos para reducir el desperdicio de agua en tu hogar y proteger nuestro recurso más valioso. Calcula tu consumo con nuestra herramienta interactiva y refuerza lo aprendido con nuestro juego educativo, porque cada gota ahorrada hoy es una inversión en el futuro.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="window.location.href='calculadora.html'">
+                            Calcula tu consumo <i data-lucide="arrow-right" size="18"></i>
+                        </button>
+                        <button class="btn btn-outline" onclick="window.location.href='juego.html'">
+                            <i data-lucide="play-circle" size="18"></i> Jugar ahora
+                        </button>
+                    </div>
+
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-number">45%</span>
+                            <span class="stat-label">AHORRO PROMEDIO</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2.4M</span>
+                            <span class="stat-label">LITROS SALVADOS</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">150+</span>
+                            <span class="stat-label">COMUNIDADES</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-image-wrapper">
+                    <img src="img/fondo_juego.jpg" alt="Impacto de agua" class="hero-image">
+                    
+                   
+                </div>
+            </section>
+        </div>
+
+        <!-- SECCIÓN MISIÓN AMBIENTAL -->
+        <section class="mission-section">
+            <div class="container">
+                <div class="mission-header">
+                    <h2 class="mission-title">Nuestra Misión Ambiental</h2>
+                    <p class="mission-subtitle">Pequeños cambios en casa generan un gran impacto en el planeta. Implementa estas soluciones hoy mismo.</p>
+                </div>
+
+                <div class="cards-grid">
+                    <!-- Tarjeta 1 -->
+                    <div class="card">
+                        <div class="card-icon">
+                            <i data-lucide="home" size="24"></i>
+                        </div>
+                        <h3>Ahorro Doméstico</h3>
+                        <p>Optimiza el uso de agua en baños y cocinas con dispositivos de bajo flujo y hábitos conscientes.</p>
+                        <a href="#" class="card-link">Saber más <i data-lucide="chevron-right" size="16"></i></a>
+                    </div>
+
+                    <!-- Tarjeta 2 -->
+                    <div class="card">
+                        <div class="card-icon">
+                            <i data-lucide="gauge" size="24"></i>
+                        </div>
+                        <h3>Consumo Consciente</h3>
+                        <p>Mide y monitorea tu consumo diario para identificar oportunidades de ahorro inmediato en tu factura.</p>
+                        <a href="#" class="card-link">Saber más <i data-lucide="chevron-right" size="16"></i></a>
+                    </div>
+
+                    <!-- Tarjeta 3 -->
+                    <div class="card">
+                        <div class="card-icon">
+                            <i data-lucide="tree-pine" size="24"></i>
+                        </div>
+                        <h3>Futuro Sostenible</h3>
+                        <p>Educamos a las próximas generaciones sobre la importancia vital de los recursos hídricos.</p>
+                        <a href="#" class="card-link">Saber más <i data-lucide="chevron-right" size="16"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+       
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 EcoAqua. Todos los derechos reservados. Diseñando un futuro con agua para todos.</p>
+            </div>
+       
+    </footer>
+
+    <!-- Inicializar iconos Lucide -->
+    <script>
+        lucide.createIcons();
+    </script>
+
+  
+
+<script src="script/sesion.js"></script>
+</body>
+</html>
