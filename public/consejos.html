@@ -29,9 +29,6 @@
                     <li><a href="importancia.html">Importancia</a></li>
                      <li><a href="mayorconsumo.html">Mayor consumo</a></li>
                     <li><a href="consejos.html">Consejos</a></li>
-                    
-                    
-                    
                 </ul>
             </nav>
 
@@ -55,14 +52,9 @@
     </div>
     </div>
 
-    
-    
-
-
     <main>
         <div class="container">
             
-            <!-- ENCABEZADO DE PÁGINA -->
             <section class="page-header">
                 <div class="badge">
                     <i data-lucide="check-circle" size="14"></i> GUÍA CATEGORIZADA Y PRÁCTICA
@@ -73,10 +65,8 @@
                 </p>
             </section>
 
-            <!-- LAYOUT PRINCIPAL -->
             <div class="ahorro-layout">
                 
-                <!-- COLUMNA IZQUIERDA (Contenido Principal) -->
                 <div class="main-content">
                     
                     <div class="title-with-line">
@@ -84,16 +74,12 @@
                         <h2>Acciones Inmediatas</h2>
                     </div>
 
-                    <!-- Pestañas -->
                     <div class="category-tabs">
                         <button class="tab-btn active"><i data-lucide="bath" size="18"></i> Baño</button>
                         <button class="tab-btn"><i data-lucide="utensils" size="18"></i> Cocina</button>
                         <button class="tab-btn"><i data-lucide="washing-machine" size="18"></i> Lavado</button>
                         <button class="tab-btn"><i data-lucide="tree-deciduous" size="18"></i> Jardín</button>
                     </div>
-
-                    <!-- Acordeón 1: Expandido -->
-                    
 
                     <div class="errors-section">
                         <h2 class="errors-title">
@@ -134,10 +120,8 @@
 
                 </div>
 
-                <!-- COLUMNA DERECHA -->
                 <div class="sidebar">
                     
-                    <!-- Tarjeta Meta -->
                     <div class="goal-card">
                         <div class="goal-icon">
                             <i data-lucide="bar-chart-2" size="24"></i>
@@ -148,7 +132,6 @@
                         </div>
                     </div>
 
-                    <!-- Tarjeta Cultura del Agua -->
                     <div class="culture-card">
                         <div class="culture-top">
                            
@@ -165,7 +148,6 @@
         </div>
 
        <div class="feedback-actions">
-            <!-- Grupo de caritas a la izquierda -->
             <div class="reaction-group">
                 <button class="reaction-btn" title="¡Me encanta!">
                     <i data-lucide="smile"></i>
@@ -177,7 +159,6 @@
                 </button>
             </div>
 
-            <!-- Botón de enviar a la derecha -->
             <button class="send-btn">
                 <span>Enviar</span>
                 <i data-lucide="send"></i>
@@ -189,15 +170,128 @@
             </div>
         </main>
 
-    <!-- FOOTER -->
-   
-            <div class="footer-bottom">
+    <div class="footer-bottom">
                 <p>&copy; 2026 EcoAqua. Todos los derechos reservados. Educando para un futuro sostenible.</p>
             </div>
       
    
+    <div id="modal-plantas-overlay" onclick="cerrarModalPlantas()" style="display:none;position:fixed;inset:0;background:rgba(2,18,36,0.6);backdrop-filter:blur(6px);z-index:1000;align-items:flex-start;justify-content:center;padding:2rem 1rem;overflow-y:auto;">
+        <div onclick="event.stopPropagation()" style="background:white;border-radius:1.5rem;width:100%;max-width:860px;box-shadow:0 25px 80px rgba(0,0,0,0.2);overflow:hidden;margin:auto;">
+            <div style="background:linear-gradient(135deg,#1a202c,#34c7d5);padding:2rem 2.5rem;position:relative;">
+                <button onclick="cerrarModalPlantas()" style="position:absolute;top:1rem;right:1rem;background:rgba(255,255,255,0.15);border:none;color:white;width:2rem;height:2rem;border-radius:50%;cursor:pointer;font-size:1rem;">✕</button>
+                <p style="font-size:0.75rem;font-weight:800;color:rgba(165,243,252,0.8);text-transform:uppercase;letter-spacing:0.1em;margin:0 0 4px;">Plantas Nativas</p>
+                <h2 style="color:white;font-size:1.5rem;font-weight:900;margin:0 0 0.4rem;">Especies Nativas de Chiapas</h2>
+                <p style="color:rgba(236,254,255,0.8);font-size:0.9rem;margin:0;">Estas plantas están adaptadas al clima local y requieren mucho menos riego.</p>
+            </div>
+            <div style="padding:2rem 2.5rem;">
+                <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;">
+                    <div class="planta-card">
+                        <img src="https://www.jardineriaon.com/wp-content/uploads/2025/05/significado-flor-plumeria-y-como-cuidarla-8.png" alt="Plumeria" onerror="this.src='https://placehold.co/300x200/34c7d5/white?text=Plumeria'">
+                        <div class="planta-info">
+                            <h3>Plumeria</h3>
+                            <span class="planta-badge">💧 Riego bajo</span>
+                        </div>
+                    </div>
+                    <div class="planta-card">
+                        <img src="https://blogs.uww.edu/introtolatinamerica/files/2019/09/LaPochotaChiapa1.wikipedia-1024x685.jpg" alt="Ceiba" onerror="this.src='https://placehold.co/300x200/34c7d5/white?text=Ceiba'">
+                        <div class="planta-info">
+                            <h3>Ceiba</h3>
+                            <span class="planta-badge">💧 Riego muy bajo</span>
+                        </div>
+                    </div>
+                    <div class="planta-card">
+                        <img src="https://encolombia.com/wp-content/uploads/2013/02/heliconia-floricultura-1.jpg" alt="Heliconia" onerror="this.src='https://placehold.co/300x200/34c7d5/white?text=Heliconia'">
+                        <div class="planta-info">
+                            <h3>Heliconia</h3>
+                            <span class="planta-badge">💧💧 Riego moderado</span>
+                        </div>
+                    </div>
+                    <div class="planta-card">
+                        <img src="http://cdn.shopify.com/s/files/1/0274/6990/6017/products/3K5PVrR-0_21largestimage_3FMaxSize_3DImageSizeX5Large_1200x1200.jpg?v=1663277773g" alt="Agave" onerror="this.src='https://placehold.co/300x200/34c7d5/white?text=Agave'">
+                        <div class="planta-info">
+                            <h3>Agave</h3>
+                            <span class="planta-badge">💧 Riego muy bajo</span>
+                        </div>
+                    </div>
+                    <div class="planta-card">
+                        <img src="https://www.clarin.com/img/2024/04/17/7ukGmH3Ay_2000x1500__1.jpg" alt="Dalia" onerror="this.src='https://placehold.co/300x200/34c7d5/white?text=Dalia'">
+                        <div class="planta-info">
+                            <h3>Dalia</h3>
+                            <span class="planta-badge">💧💧 Riego moderado</span>
+                        </div>
+                    </div>
+                    <div class="planta-card">
+                        <img src="https://www.fotopaises.com/Fotos-Paises/t1024/2016/2/22/8273_1455997559.jpg" alt="Bromelia" onerror="this.src='https://placehold.co/300x200/34c7d5/white?text=Bromelia'">
+                        <div class="planta-info">
+                            <h3>Bromelia</h3>
+                            <span class="planta-badge">💧 Riego bajo</span>
+                        </div>
+                    </div>
+                </div>
+                <p style="font-size:0.75rem;color:#94a3b8;text-align:center;margin-top:1.5rem;">
+                     Sustituir plantas exóticas por estas especies puede reducir hasta un 50% el agua de tu jardín.
+                </p>
+            </div>
+        </div>
+    </div>
 
-    <!-- Inicializar iconos Lucide -->
+    <div id="modal-info-overlay" onclick="cerrarModalInfo()" style="display:none;position:fixed;inset:0;background:rgba(2,18,36,0.6);backdrop-filter:blur(6px);z-index:1000;align-items:center;justify-content:center;padding:2rem;">
+        <div onclick="event.stopPropagation()" style="background:white;border-radius:1.5rem;width:100%;max-width:600px;box-shadow:0 25px 80px rgba(0,0,0,0.2);overflow:hidden;">
+            <div style="background:linear-gradient(135deg,#1a202c,#34c7d5);padding:2rem;position:relative;">
+                <button onclick="cerrarModalInfo()" style="position:absolute;top:1rem;right:1rem;background:rgba(255,255,255,0.15);border:none;color:white;width:2rem;height:2rem;border-radius:50%;cursor:pointer;">✕</button>
+                <h2 style="color:white;font-weight:900;margin:0;">Revisar fugas de grifo</h2>
+            </div>
+            <div style="padding:2rem;">
+                <p id="modal-info-texto" style="color:#334155;font-weight:600;font-size:1.1rem;margin-bottom:1rem;"></p>
+                <ul style="color:#334155;font-size:1rem;line-height:1.6;padding-left:1.5rem;">
+                    <li style="margin-bottom:8px;"><strong>1. Identifica la fuente:</strong> Busca manchas de agua, mojado en paredes o techos, o goteo constante bajo los grifos.</li>
+                    <li style="margin-bottom:8px;"><strong>2. Cierra el suministro:</strong> Asegúrate de cerrar la válvula de suministro de agua correspondiente al grifo.</li>
+                    <li style="margin-bottom:8px;"><strong>3. Desmontaje:</strong> Usa llaves ajustables y destornilladores para desmontar el grifo.</li>
+                    <li style="margin-bottom:8px;"><strong>4. Reemplazo:</strong> Si la junta tórica está desgastada, cámbiala por una nueva.</li>
+                    <li style="margin-bottom:8px;"><strong>5. Limpieza:</strong> Limpia todas las partes y asegúrate de que las conexiones estén apretadas.</li>
+                    <li style="margin-bottom:8px;"><strong>6. Prueba:</strong> Vuelve a abrir la válvula y monitorea si hay goteos.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-tec-overlay" onclick="cerrarModaltec()" style="display:none;position:fixed;inset:0;background:rgba(2,18,36,0.6);backdrop-filter:blur(6px);z-index:1000;align-items:center;justify-content:center;padding:2rem;">
+        <div onclick="event.stopPropagation()" style="background:white;border-radius:1.5rem;width:100%;max-width:600px;box-shadow:0 25px 80px rgba(0,0,0,0.2);overflow:hidden;">
+            <div style="background:linear-gradient(135deg,#1a202c,#34c7d5);padding:2rem;position:relative;">
+                <button onclick="cerrarModaltec()" style="position:absolute;top:1rem;right:1rem;background:rgba(255,255,255,0.15);border:none;color:white;width:2rem;height:2rem;border-radius:50%;cursor:pointer;">✕</button>
+                <h2 style="color:white;font-weight:900;margin:0;">Técnica de lavado</h2>
+            </div>
+            <div style="padding:2rem;">
+                <p id="modal-tec-texto" style="color:#334155;font-weight:600;font-size:1.1rem;margin-bottom:1rem;"></p>
+                <ul style="color:#334155;font-size:1rem;line-height:1.6;padding-left:1.5rem;">
+                    <li style="margin-bottom:8px;"><strong>1. Pre-limpieza:</strong> Retira los restos de comida con una servilleta o espátula antes de abrir la llave.</li>
+                    <li style="margin-bottom:8px;"><strong>2. Agrupación:</strong> Agrupa los utensilios según su suciedad. Empieza por vasos, luego cubiertos y sartenes.</li>
+                    <li style="margin-bottom:8px;"><strong>3. Enjabonado:</strong> Llena una cubeta con agua tibia y jabón para tallar todos los trastes cerrando el grifo.</li>
+                    <li style="margin-bottom:8px;"><strong>4. Enjuague:</strong> Enjuaga rápidamente usando agua fría o una regadera.</li>
+                    <li style="margin-bottom:8px;"><strong>5. Secado:</strong> Coloca los platos sobre una rejilla para escurrir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-tips-overlay" onclick="cerrarModaltips()" style="display:none;position:fixed;inset:0;background:rgba(2,18,36,0.6);backdrop-filter:blur(6px);z-index:1000;align-items:center;justify-content:center;padding:2rem;">
+        <div onclick="event.stopPropagation()" style="background:white;border-radius:1.5rem;width:100%;max-width:600px;box-shadow:0 25px 80px rgba(0,0,0,0.2);overflow:hidden;">
+            <div style="background:linear-gradient(135deg,#1a202c,#34c7d5);padding:2rem;position:relative;">
+                <button onclick="cerrarModaltips()" style="position:absolute;top:1rem;right:1rem;background:rgba(255,255,255,0.15);border:none;color:white;width:2rem;height:2rem;border-radius:50%;cursor:pointer;">✕</button>
+                <h2 style="color:white;font-weight:900;margin:0;">Tips de reutilización</h2>
+            </div>
+            <div style="padding:2rem;">
+                <p id="modal-tips-texto" style="color:#334155;font-weight:600;font-size:1.1rem;margin-bottom:1rem;"></p>
+                <ul style="color:#334155;font-size:1rem;line-height:1.6;padding-left:1.5rem;">
+                    <li style="margin-bottom:8px;"><strong>1. Aguas grises:</strong> Provienen de duchas o lavadoras. Ideales para el jardín si se filtran los restos de jabón.</li>
+                    <li style="margin-bottom:8px;"><strong>2. Agua de cocina:</strong> El agua para hervir verduras, una vez fría, contiene nutrientes excelentes para macetas.</li>
+                    <li style="margin-bottom:8px;"><strong>3. Agua de lluvia:</strong> Excelente para riego; consérvala tapada en barriles para evitar mosquitos.</li>
+                    <li style="margin-bottom:8px;"><strong>4. Aire acondicionado:</strong> El agua que gotea del clima es perfecta para plantas de poco riego como suculentas.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <script>
         lucide.createIcons();
     </script>

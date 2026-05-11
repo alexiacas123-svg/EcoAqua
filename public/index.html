@@ -30,9 +30,6 @@
                     <li><a href="importancia.html">Importancia</a></li>
                      <li><a href="mayorconsumo.html">Mayor consumo</a></li>
                     <li><a href="consejos.html">Consejos</a></li>
-                    
-                    
-                    
                 </ul>
             </nav>
 
@@ -46,16 +43,17 @@
                     <i data-lucide="gamepad-2"></i> Jugar
                 </button>
 
-
-                <button class="btn btn-sesion" id="boton-acceso" onclick="window.location.href='login.html'">
-                      <i></i> Iniciar sesión
-                </button>
-
-           
+                <div id="g_id_onload"
+                     data-client_id="218489763476-v63vmr2p58ddi27567ts20splphm87f6.apps.googleusercontent.com"
+                     data-callback="manejarRespuestaGoogle">
+                </div>
+                <div class="g_id_signin" data-type="standard" data-theme="outline" data-size="large"></div>
+                
+            </div>
         </header>
     </div>
     </div>
-    <!-- SECCIÓN HERO -->
+    
     <main>
         <div class="container">
             <section class="hero">
@@ -95,13 +93,10 @@
 
                 <div class="hero-image-wrapper">
                     <img src="img/fondo_juego.jpg" alt="Impacto de agua" class="hero-image">
-                    
-                   
                 </div>
             </section>
         </div>
 
-        <!-- SECCIÓN MISIÓN AMBIENTAL -->
         <section class="mission-section">
             <div class="container">
                 <div class="mission-header">
@@ -110,57 +105,61 @@
                 </div>
 
                 <div class="cards-grid">
-                    <!-- Tarjeta 1 -->
                     <div class="card">
                         <div class="card-icon">
                             <i data-lucide="home" size="24"></i>
                         </div>
                         <h3>Ahorro Doméstico</h3>
                         <p>Optimiza el uso de agua en baños y cocinas con dispositivos de bajo flujo y hábitos conscientes.</p>
-                        <a href="#" class="card-link">Saber más <i data-lucide="chevron-right" size="16"></i></a>
+                        <a class="card-link" style="cursor: pointer;" onclick="abrirModalInfo('domestico')">Saber más <i data-lucide="chevron-right" size="16"></i></a>
                     </div>
 
-                    <!-- Tarjeta 2 -->
                     <div class="card">
                         <div class="card-icon">
                             <i data-lucide="gauge" size="24"></i>
                         </div>
                         <h3>Consumo Consciente</h3>
                         <p>Mide y monitorea tu consumo diario para identificar oportunidades de ahorro inmediato en tu factura.</p>
-                        <a href="#" class="card-link">Saber más <i data-lucide="chevron-right" size="16"></i></a>
+                        <a class="card-link" style="cursor: pointer;" onclick="abrirModalInfo('consumo')">Saber más <i data-lucide="chevron-right" size="16"></i></a>
                     </div>
 
-                    <!-- Tarjeta 3 -->
                     <div class="card">
                         <div class="card-icon">
                             <i data-lucide="tree-pine" size="24"></i>
                         </div>
                         <h3>Futuro Sostenible</h3>
                         <p>Educamos a las próximas generaciones sobre la importancia vital de los recursos hídricos.</p>
-                        <a href="#" class="card-link">Saber más <i data-lucide="chevron-right" size="16"></i></a>
+                        <a class="card-link" style="cursor: pointer;" onclick="abrirModalInfo('futuro')">Saber más <i data-lucide="chevron-right" size="16"></i></a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer>
-       
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 EcoAqua. Todos los derechos reservados. Diseñando un futuro con agua para todos.</p>
-            </div>
-       
-    </footer>
 
-    <!-- Inicializar iconos Lucide -->
-    <script>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EcoAqua. Todos los derechos reservados. Diseñando un futuro con agua para todos.</p>
+        </div>
+
+
+    <div id="modal-info-overlay" onclick="cerrarModalInfo()" style="display:none;position:fixed;inset:0;background:rgba(2,18,36,0.55);backdrop-filter:blur(5px);z-index:1000;align-items:center;justify-content:center;padding:1rem;">
+        <div onclick="event.stopPropagation()" style="background:white;border-radius:1.5rem;width:100%;max-width:520px;box-shadow:0 25px 80px rgba(0,0,0,0.2);animation:slideUpModal 0.3s cubic-bezier(0.34,1.4,0.64,1);overflow:hidden;">
+            <div id="modal-info-header" style="background:#36d6e8;padding:2rem;position:relative;">
+                <h2 id="modal-info-titulo" style="color:white;font-size:1.3rem;font-weight:800;margin:0;"></h2>
+                <button onclick="cerrarModalInfo()" style="position:absolute;top:1rem;right:1rem;background:#36d6e8;border:none;color:white;width:2rem;height:2rem;border-radius:50%;cursor:pointer;font-size:1rem;">✕</button>
+            </div>
+            <div style="padding:2rem;">
+                <p id="modal-info-desc" style="color:#36d6e8;font-size:0.95rem;line-height:1.7;margin:0 0 1.5rem;"></p>
+                <ul id="modal-info-puntos" style="list-style:none;padding:0;margin:0 0 1.5rem;display:flex;flex-direction:column;gap:0.6rem;"></ul>
+                <a id="modal-info-btn" style="display:block;text-align:center;background:#34c7d5;color:white;text-decoration:none;padding:0.85rem;border-radius:12px;font-weight:800;font-size:0.95rem;cursor:pointer;">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/sesion.js"></script>
+    <script src="script/index.js"></script> <script>
         lucide.createIcons();
     </script>
-
-  
-
-<script src="script/sesion.js"></script>
 </body>
 </html>
